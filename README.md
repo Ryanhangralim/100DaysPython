@@ -4,3 +4,4 @@ This repository will be filled with codes written for the course titled "100 Day
 ## Course contents
 ### Day 1
 - Printing, Commenting, Debugging, String Manipulation and Variables
+- Final project : Band Name Generator
