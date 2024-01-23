@@ -5,3 +5,6 @@ This repository will be filled with codes written for the course titled "100 Day
 ### Day 1
 - Printing, Commenting, Debugging, String Manipulation and Variables
 - Final project : Band Name Generator
+### Day 2
+- Data Types, Numbers, Operations, Type Conversion, f-Strings
+- Final project : Tip Calculator
