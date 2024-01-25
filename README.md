@@ -11,3 +11,6 @@ This repository will be filled with codes written for the course titled "100 Day
 ### Day 3
 - Conditional Statements, Logical Operators, Code Blocks and Scope
 - Final project : Treasure Island
+### Day 4
+- Randomisations and lists
+- Final project : Rock Paper Scissor Games
