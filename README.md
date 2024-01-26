@@ -14,3 +14,6 @@ This repository will be filled with codes written for the course titled "100 Day
 ### Day 4
 - Randomisations and lists
 - Final project : Rock Paper Scissor Games
+### Day 5
+- For Loops, Range and Code Blocks
+- Final project : Password Generator
