@@ -17,3 +17,6 @@ This repository will be filled with codes written for the course titled "100 Day
 ### Day 5
 - For Loops, Range and Code Blocks
 - Final project : Password Generator
+### Day 6
+- Functions, Code Blocks and While Loops
+- Final project : Maze
