@@ -22,3 +22,5 @@ This repository will be filled with codes written for the course titled "100 Day
 - Final project : Maze
 ### Day 7
 - Hangman Project
+### Day 8
+- Functions with Inputs
