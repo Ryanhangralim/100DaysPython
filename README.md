@@ -24,4 +24,7 @@ This repository will be filled with codes written for the course titled "100 Day
 - Hangman Project
 ### Day 8
 - Functions with Inputs
-- FInal project : Caesar cipher
+- Final project : Caesar cipher
+### Day 9
+- Dictionaries & nesting
+- Secret auction program
