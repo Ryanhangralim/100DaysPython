@@ -27,4 +27,7 @@ This repository will be filled with codes written for the course titled "100 Day
 - Final project : Caesar cipher
 ### Day 9
 - Dictionaries & nesting
-- Secret auction program
+- Final project : Secret auction program
+### Day 10
+- Functions with outputs
+- Final project : Calculator app
