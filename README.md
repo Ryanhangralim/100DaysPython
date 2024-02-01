@@ -31,3 +31,5 @@ This repository will be filled with codes written for the course titled "100 Day
 ### Day 10
 - Functions with outputs
 - Final project : Calculator app
+### Day 11
+- Final project : Blackjack Capstone Project
