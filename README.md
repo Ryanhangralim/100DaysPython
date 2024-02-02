@@ -33,3 +33,6 @@ This repository will be filled with codes written for the course titled "100 Day
 - Final project : Calculator app
 ### Day 11
 - Final project : Blackjack Capstone Project
+### Day 12
+- Namespace: Local vs. Global Scope
+- Final project : The Number Guessing Game
