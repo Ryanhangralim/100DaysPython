@@ -36,3 +36,5 @@ This repository will be filled with codes written for the course titled "100 Day
 ### Day 12
 - Namespace: Local vs. Global Scope
 - Final project : The Number Guessing Game
+### Day 13
+- Debugging
