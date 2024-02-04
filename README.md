@@ -38,3 +38,5 @@ This repository will be filled with codes written for the course titled "100 Day
 - Final project : The Number Guessing Game
 ### Day 13
 - Debugging
+### Day 14
+- Higher or Lower Game
