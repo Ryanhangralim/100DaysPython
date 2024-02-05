@@ -40,3 +40,6 @@ This repository will be filled with codes written for the course titled "100 Day
 - Debugging
 ### Day 14
 - Higher or Lower Game
+### Day 15
+- Setup Local Development Environment
+- Final Project : Coffee Machine Project
