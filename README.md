@@ -43,3 +43,6 @@ This repository will be filled with codes written for the course titled "100 Day
 ### Day 15
 - Setup Local Development Environment
 - Final Project : Coffee Machine Project
+### Day 16
+- Object Oriented Programming (OOP)
+- Final Project : OOP Coffee Machine
