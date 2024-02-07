@@ -46,3 +46,6 @@ This repository will be filled with codes written for the course titled "100 Day
 ### Day 16
 - Object Oriented Programming (OOP)
 - Final Project : OOP Coffee Machine
+### Day 17
+- Creating Classes
+- Final Project : Quiz game
