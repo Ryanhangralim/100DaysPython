@@ -1,4 +1,5 @@
 from turtle import Turtle, Screen
+import random
 
 tim = Turtle()
 tim.shape("turtle")
@@ -15,6 +16,16 @@ tim.color("Black")
     # tim.forward(10)
     # tim.penup()
     # tim.forward(10)
+
+#draw triangle, square, pentagon, hexagon, heptagon, octagon, nonagon and decagon
+degree = 360
+colours = ["CornflowerBlue", "DarkOrchid", "IndianRed", "DeepSkyBlue", "LightSeaGreen", "wheat", "SlateGray", "SeaGreen"]
+for sides in range(3, 11):
+    angle = degree/sides
+    tim.color(random.choice(colours))
+    for _ in range(sides):
+        tim.forward(100)
+        tim.right(angle)
 
 screen = Screen()
 screen.exitonclick()
