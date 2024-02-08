@@ -49,3 +49,6 @@ This repository will be filled with codes written for the course titled "100 Day
 ### Day 17
 - Creating Classes
 - Final Project : Quiz game
+### Day 18
+- Turtle Graphics, Tuples and Importing Modules
+- Final Project : Turtle art maker
