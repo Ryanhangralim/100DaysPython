@@ -37,5 +37,16 @@ tim.color("Black")
 #     tim.forward(30)
 #     tim.setheading(random.choice(angles))
 
+#Challenge 5 : Draw a spirograph
+# angle = 0
+# tim.speed("fastest")
+# colours = ["CornflowerBlue", "DarkOrchid", "IndianRed", "DeepSkyBlue", "LightSeaGreen", "wheat", "SlateGray", "SeaGreen"]
+# while angle < 360:
+#     tim.color(random.choice(colours))
+#     tim.setheading(angle)
+#     tim.circle(100)
+#     angle += 5
+
+
 screen = Screen()
 screen.exitonclick()
