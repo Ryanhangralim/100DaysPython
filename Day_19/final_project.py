@@ -26,7 +26,7 @@ if user_bet:
                 is_race_on = False
             turtle.forward(random.randint(0, 10))
 
-print(f"winner : {winner}")                
+              
 if user_bet == winner:
     print(f"You've won! The {winner} turtle is the winner!")
 else:
