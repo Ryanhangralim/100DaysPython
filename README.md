@@ -56,4 +56,4 @@ This repository will be filled with codes written for the course titled "100 Day
 - More Turtle Graphics, Event Listeners, State and Multiple Instances
 - Final Project : Turtle drawing game and turtle race
 ### Day 20
-- Final Project : Snake Game
+- Final Project : Snake Game Part 1
