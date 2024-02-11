@@ -57,3 +57,5 @@ This repository will be filled with codes written for the course titled "100 Day
 - Final Project : Turtle drawing game and turtle race
 ### Day 20
 - Final Project : Snake Game Part 1
+### Day 21
+- Final Project : Snake Game Part 2
