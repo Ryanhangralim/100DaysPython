@@ -58,4 +58,5 @@ This repository will be filled with codes written for the course titled "100 Day
 ### Day 20
 - Final Project : Snake Game Part 1
 ### Day 21
+- Inheritance and slicing
 - Final Project : Snake Game Part 2
