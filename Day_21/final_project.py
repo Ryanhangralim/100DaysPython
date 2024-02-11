@@ -13,14 +13,19 @@ snake = Snake()
 food = Food()
 
 screen.listen()
+screen.onkey(key="Up", fun=snake.up)
+screen.onkey(key="Right", fun=snake.right)
+screen.onkey(key="Down", fun=snake.down)
+screen.onkey(key="Left", fun=snake.left)
+
 game_is_on = True
 while game_is_on:
     screen.update()
     time.sleep(0.1)
     snake.move()
-    screen.onkey(key="Up", fun=snake.up)
-    screen.onkey(key="Right", fun=snake.right)
-    screen.onkey(key="Down", fun=snake.down)
-    screen.onkey(key="Left", fun=snake.left)
+
+    #detect the collision from the snake to the food
+    if snake.head.distance(food) < 15:
+        food.refresh()
 
 screen.exitonclick()
