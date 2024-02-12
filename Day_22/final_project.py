@@ -1,4 +1,4 @@
-from turtle import Screen
+from turtle import Screen, Turtle
 from paddle import Paddle
 from ball import Ball
 import time
@@ -9,6 +9,24 @@ screen.setup(width=800, height=600)
 screen.bgcolor('black')
 screen.title("Pong Game")
 screen.tracer(0)
+
+#add middle line
+line_maker = Turtle()
+line_maker.hideturtle()
+line_maker.penup()
+line_maker.goto(0, 300)
+line_maker.setheading(270)
+line_maker.pencolor("white")
+line_maker.width(5)
+
+gap = 10
+height = 560
+while height > 0:
+    line_maker.forward(gap * 1.5)
+    line_maker.pendown()
+    line_maker.forward(gap)
+    height -= (2.5 * gap)
+    line_maker.penup()
 
 right_paddle = Paddle((350, 0))
 left_paddle = Paddle((-350, 0))
