@@ -60,3 +60,5 @@ This repository will be filled with codes written for the course titled "100 Day
 ### Day 21
 - Inheritance and slicing
 - Final Project : Snake Game Part 2
+### Day 22
+- Final Project : The Pong Game
