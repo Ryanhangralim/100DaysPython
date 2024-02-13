@@ -23,16 +23,16 @@ while game_is_on:
     time.sleep(0.1)
     screen.update()
 
-    #create car
+    # create car
     cars.create_car()
     cars.move(scoreboard.level)
 
-    #detect collision with finishline
-    if(player.ycor() > FINISH_LINE_Y):
+    # detect collision with finishline
+    if player.ycor() > FINISH_LINE_Y:
         scoreboard.add_level()
         player.go_to_start()
 
-    #detect collision with cars
+    # detect collision with cars
     for car in cars.all_cars:
         if player.distance(car) < 20:
             game_is_on = False

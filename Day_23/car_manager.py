@@ -6,12 +6,12 @@ import time
 from turtle import Turtle
 import random
 
+
 class CarManager(Turtle):
     def __init__(self):
         super().__init__()
         self.hideturtle()
         self.all_cars = []
-
 
     def create_car(self):
         random_chance = random.randint(1, 6)
