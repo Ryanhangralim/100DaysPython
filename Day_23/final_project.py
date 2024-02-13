@@ -12,6 +12,7 @@ screen.tracer(0)
 
 player = Player()
 scoreboard = Scoreboard()
+cars = CarManager()
 
 screen.listen()
 screen.onkey(key="Up", fun=player.move)
@@ -20,6 +21,10 @@ game_is_on = True
 while game_is_on:
     time.sleep(0.1)
     screen.update()
+
+    #create car
+    cars.create_car()
+    cars.move(scoreboard.level)
 
     #detect collision with finishline
     if(player.ycor() > FINISH_LINE_Y):
