@@ -66,4 +66,4 @@ This repository will be filled with codes written for the course titled "100 Day
 - Final Project : Capstone Project - Turtle Crossing Game
 ### Day 24
 - Working with Local Files and Directories
-- Final Project : Improving the snake game
+- Final Project : Main Merge
