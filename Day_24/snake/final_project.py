@@ -36,13 +36,13 @@ while game_is_on:
     x_head = snake.head.xcor()
     y_head = snake.head.ycor()
     if x_head > 280 or x_head < -280 or y_head > 280 or y_head < -280:
-        game_is_on = False
-        score_board.game_over()
+        score_board.reset()
+        snake.reset()
 
     #detect the collision with tail
     for segment in snake.segments[1:]:
         if snake.head.distance(segment) < 10:
-            game_is_on = False
-            score_board.game_over()
+            score_board.reset()
+            snake.reset()
 
 screen.exitonclick()
