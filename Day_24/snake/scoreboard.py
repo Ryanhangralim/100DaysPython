@@ -12,6 +12,7 @@ class ScoreBoard(Turtle):
         self.penup()
         self.goto(0, 275)
         self.score = 0
+        self.get_highscore()
         self.update_scoreboard()
 
 
@@ -23,11 +24,20 @@ class ScoreBoard(Turtle):
         if self.score > self.highscore:
             self.highscore = self.score
         self.score = 0
+        self.update_highscore()
         self.update_scoreboard()
 
-    # def game_over(self):
-    #     self.goto(0, 0)
-    #     self.write("GAME OVER", align=ALIGNTMENT, font=FONT)
+    
+    def get_highscore(self):
+        with open("highscore.txt", mode="r") as file:
+            score = int(file.read())
+            self.highscore = score
+
+
+    def update_highscore(self):
+        with open("highscore.txt", mode="w") as file:
+            file.write(str(self.highscore))
+
 
     def add_score(self):
         self.score += 1
