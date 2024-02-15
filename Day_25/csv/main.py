@@ -41,9 +41,9 @@ data = pandas.read_csv("weather_data.csv")
 # print(data[data.temp == data.temp.max()])
 
 #gets monday's temperature and conver it to fahrenheit
-# monday = data[data.day == "Monday"]
-# temp = (monday.temp * 1.8) + 32
-# print(temp) 
+monday = data[data.day == "Monday"]
+temp = (monday.temp * 1.8) + 32
+print(temp + 1) 
 
 #create a dataframe from scratch
 data_dict = {

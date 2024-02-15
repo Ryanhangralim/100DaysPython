@@ -13,12 +13,19 @@ turtle.shape(image)
 writer = Writer()
 
 #gets data from csv file
-data = pandas.read_csv("50_states.csv")
-print(data.x)
+data = pandas.read_csv("50_states.csv", index_col=False)
+states_list = data["state"].to_list()
 
 #Loops while there is a chance to answer
 game_is_on = True
-score = 0
-while game_is_on:
-    answer_state = screen.textinput(title="Guess the State", prompt="What's another state's name?").title()
-    print(answer_state)
+answered_state = []
+
+while len(answered_state) < 50:
+    answer_state = screen.textinput(title=f"{len(answered_state)}/50 States Correct", prompt="What's another state's name?")
+    if answer_state:
+        answer_state = answer_state.title()
+    #checks if answer is in list
+    if((answer_state in states_list) and (answer_state not in answered_state)):
+        state_info = data[data["state"] == answer_state]
+        writer.write_text(answer_state, state_info.x.iloc[0], state_info.y.iloc[0])
+        answered_state.append(answered_state)

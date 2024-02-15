@@ -8,5 +8,8 @@ class Writer(Turtle):
 
 
     def write_text(self, text, x, y):
+        """
+        method to write states onto screen on a certain coordinate
+        """
         self.goto(x, y)
         self.write(text)
