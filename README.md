@@ -67,3 +67,6 @@ This repository will be filled with codes written for the course titled "100 Day
 ### Day 24
 - Working with Local Files and Directories
 - Final Project : Main Merge
+### Day 25
+- Working with CSV Files and Analysing Data with Pandas
+- Final Project : US State Guessing Game
