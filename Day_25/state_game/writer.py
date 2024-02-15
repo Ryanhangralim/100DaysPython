@@ -7,6 +7,6 @@ class Writer(Turtle):
         self.penup()
 
 
-    def write(self, text, x, y):
+    def write_text(self, text, x, y):
         self.goto(x, y)
         self.write(text)
