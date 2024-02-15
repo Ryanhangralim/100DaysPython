@@ -1,5 +1,6 @@
 import turtle
 from writer import Writer
+import pandas
 
 #screen setup
 screen = turtle.Screen()
@@ -10,7 +11,10 @@ turtle.shape(image)
 
 #turtle writer
 writer = Writer()
-writer.write_text("Alabama", 139, -77)
+
+#gets data from csv file
+data = pandas.read_csv("50_states.csv")
+print(data.x)
 
 #Loops while there is a chance to answer
 game_is_on = True
