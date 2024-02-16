@@ -1,3 +1,3 @@
-numbers = [1, 2, 3]
-new_list = [number * 2 for number in range(1,5)]
-print(new_list)
+names = ["Ryan", "Bob", "Pedro", "Walter", "White", "Junior"]
+short_names = [name.upper() for name in names if len(name) > 4]
+print(short_names)
