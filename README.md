@@ -70,3 +70,6 @@ This repository will be filled with codes written for the course titled "100 Day
 ### Day 25
 - Working with CSV Files and Analysing Data with Pandas
 - Final Project : US State Guessing Game
+### Day 26
+- List and Dictionary Cimprehensions
+- Final Project : NATO alphabet converter
