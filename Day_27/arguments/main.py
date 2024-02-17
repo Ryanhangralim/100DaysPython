@@ -15,3 +15,13 @@ def calculate(n, **kwargs):
     print(n)
 
 calculate(2, add=3, multiply=5)
+
+class Car:
+    def __init__(self, color="red", **kwargs):
+        self.make = kwargs.get("make")
+        self.model = kwargs.get("model")
+        self.color = color
+
+my_car = Car(make="Nissan", color="blue")
+print(my_car.model)
+print(my_car.color)
