@@ -2,13 +2,14 @@ import tkinter as tk
 
 def convert():
     miles = input.get()
-    result["text"] = int(miles) * 1.61 
+    result["text"] = float(miles) * 1.609 
 
 window = tk.Tk()
 window.title("Mile to Km Converter")
-window.minsize(width=300, height=150)
+# window.minsize(width=300, height=150)
+window.config(padx=20, pady=20)
 
-input = tk.Entry()
+input = tk.Entry(width=7)
 miles = tk.Label(text="Miles")
 km = tk.Label(text="Km")
 equal_to = tk.Label(text="is equal to")
