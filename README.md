@@ -76,3 +76,5 @@ This repository will be filled with codes written for the course titled "100 Day
 ### Day 27
 - Graphical User Interaces (GUI) with Tkinter and Function Arguments
 - Final project : Mile to Kilometers Converter
+### Day 28
+- Final Project : Building a Pomodoro App
