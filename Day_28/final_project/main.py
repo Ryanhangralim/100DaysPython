@@ -22,10 +22,27 @@ window = tk.Tk()
 window.title("Pomodoro")
 window.config(padx=100, pady=50, bg=YELLOW)
 
+#Timer label
+timer_label = tk.Label(text="Timer", font=(FONT_NAME, 50), fg=GREEN, bg=YELLOW)
+timer_label.grid(row=0, column=1)
+
+#Tomato image
 canvas = tk.Canvas(window, width=200, height=224, bg=YELLOW, highlightthickness=0)
 tomato = tk.PhotoImage(file="tomato.png")
 canvas.create_image(100, 112, image=tomato)
 canvas.create_text(100, 130, text="00:00", fill="white", font=(FONT_NAME, 35, "bold"))
-canvas.pack()
+canvas.grid(row=1, column=1)
+
+#start button
+start_button = tk.Button(text="Start", highlightthickness=0)
+start_button.grid(row=2, column=0)
+
+#reset button
+reset_button = tk.Button(text="Reset", highlightthickness=0)
+reset_button.grid(row=2, column=2)
+
+#checkmark
+check_mark = tk.Label(text=CHECKMARK, font=(FONT_NAME, 15),fg=GREEN, bg=YELLOW)
+check_mark.grid(row=3, column=1)
 
 window.mainloop()
