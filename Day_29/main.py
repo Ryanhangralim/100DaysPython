@@ -14,6 +14,13 @@ window.config(padx=20, pady=20)
 canvas = tk.Canvas(window, width=200, height=200, highlightthickness=0)
 logo = tk.PhotoImage(file="logo.png")
 canvas.create_image(100, 100, image=logo)
-canvas.pack()
+canvas.grid(row=0, column=1)
+
+#website row
+website = tk.Label(text="Website:")
+website.grid(row=1, column=0)
+
+website_entry = tk.Entry(width=35)
+website_entry.grid(row=1, column=1)
 
 window.mainloop()
