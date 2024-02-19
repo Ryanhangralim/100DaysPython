@@ -19,7 +19,8 @@ def generate_password():
 
     password = "".join(password_list)
 
-    password_entry.insert(password)
+    password_entry.delete(0, tk.END)
+    password_entry.insert(tk.END, password)
 
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
@@ -78,7 +79,7 @@ password.grid(row=3, column=0)
 password_entry = tk.Entry(width=32)
 password_entry.grid(row=3, column=1, sticky='W')
 
-generate_password_button = tk.Button(text="Generate Password")
+generate_password_button = tk.Button(text="Generate Password", command=generate_password)
 generate_password_button.grid(row=3, column=2, sticky='W')
 
 #add button
