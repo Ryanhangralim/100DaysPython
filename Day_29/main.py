@@ -22,6 +22,7 @@ website.grid(row=1, column=0)
 
 website_entry = tk.Entry(width=51)
 website_entry.grid(row=1, column=1, columnspan=2, sticky='W')
+website_entry.focus()
 
 #email/username row
 email = tk.Label(text="Email/Username:")
