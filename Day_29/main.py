@@ -23,4 +23,11 @@ website.grid(row=1, column=0)
 website_entry = tk.Entry(width=35)
 website_entry.grid(row=1, column=1)
 
+#email/username row
+email = tk.Label(text="Email/Username:")
+email.grid(row=2, column=0)
+
+email_entry = tk.Entry(width=35)
+email_entry.grid(row=2, column=1)
+
 window.mainloop()
