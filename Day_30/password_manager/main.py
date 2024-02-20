@@ -58,6 +58,13 @@ def save_password():
         website_entry.delete(0, tk.END)
         password_entry.delete(0, tk.END)
 
+# ---------------------------- SEARCH PASSWORD ------------------------------- #
+def find_password():
+    #check for website to be searched
+    website = website_entry.get()
+    if(len(website) == 0):
+        messagebox.showinfo(title="Oops", message="Please don't leave the website field empty")
+
 # ---------------------------- UI SETUP ------------------------------- #
 #window config
 window = tk.Tk()
