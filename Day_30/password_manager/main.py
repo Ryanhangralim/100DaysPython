@@ -35,7 +35,6 @@ def save_password():
     if(len(website) == 0 or len(email) == 0 or len(password) == 0):
         messagebox.showinfo(title="Oops", message="Please don't leave any fields empty")
     else:
-        new_password = f"{website} | {email} | {password}\n"
         new_data = {
             website: {
                 "email": email,
@@ -43,8 +42,14 @@ def save_password():
             }
         }
 
+        with open("password.json", mode="r") as password_file:
+            #reading old data
+            data = json.load(password_file)
+            #Updating old data with new data
+            data.update(new_data)
+
         with open("password.json", mode="w") as password_file:
-            json.dump(new_data, password_file, indent=4)
+            json.dump(data, password_file, indent=4)
         
         website_entry.delete(0, tk.END)
         password_entry.delete(0, tk.END)
