@@ -74,9 +74,13 @@ canvas.grid(row=0, column=1)
 website = tk.Label(text="Website:")
 website.grid(row=1, column=0)
 
-website_entry = tk.Entry(width=51)
+website_entry = tk.Entry(width=32)
 website_entry.grid(row=1, column=1, columnspan=2, sticky='W')
 website_entry.focus()
+
+search_button = tk.Button(text="Search", command=lambda: print("search"), width=14)
+search_button.grid(row=1, column=2, sticky='W')
+
 
 #email/username row
 email = tk.Label(text="Email/Username:")
