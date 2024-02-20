@@ -7,7 +7,7 @@ except FileNotFoundError:
     file.write("something")
 except KeyError as error_message:
     print(f"The key {error_message} does not exist.")
-#code in else will run after try and exepts    
+#code in else will run if try is successful    
 else:
     content = file.read()
     print(content)

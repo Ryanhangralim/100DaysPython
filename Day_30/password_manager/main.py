@@ -42,14 +42,18 @@ def save_password():
             }
         }
 
-        with open("password.json", mode="r") as password_file:
-            #reading old data
-            data = json.load(password_file)
+        try:
+            with open("password.json", mode="r") as password_file:
+                #reading old data
+                data = json.load(password_file)
+        except FileNotFoundError:
+            with open("password.json", mode="w") as password_file:
+                json.dump(new_data, password_file, indent=4)
+        else:
             #Updating old data with new data
             data.update(new_data)
-
-        with open("password.json", mode="w") as password_file:
-            json.dump(data, password_file, indent=4)
+            with open("password.json", mode="w") as password_file:
+                json.dump(data, password_file, indent=4)
         
         website_entry.delete(0, tk.END)
         password_entry.delete(0, tk.END)
