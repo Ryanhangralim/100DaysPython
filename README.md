@@ -82,3 +82,4 @@ This repository will be filled with codes written for the course titled "100 Day
 - Final Project : Building a Password Manager
 ### Day 30
 - Errors, Exception and Saving JSON Data
+- Final Project : Upgrading the Password Manager
