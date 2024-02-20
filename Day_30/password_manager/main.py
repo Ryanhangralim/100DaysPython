@@ -64,7 +64,13 @@ def find_password():
     website = website_entry.get()
     if(len(website) == 0):
         messagebox.showinfo(title="Oops", message="Please don't leave the website field empty")
-
+    else:
+        try:
+            pass 
+        except FileNotFoundError:
+        #Add exception when file doesn't exist
+            messagebox.showinfo(title="Error", message="No Data File Found")
+            
 # ---------------------------- UI SETUP ------------------------------- #
 #window config
 window = tk.Tk()
