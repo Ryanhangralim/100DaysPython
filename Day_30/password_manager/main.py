@@ -66,11 +66,19 @@ def find_password():
         messagebox.showinfo(title="Oops", message="Please don't leave the website field empty")
     else:
         try:
-            pass 
+            with open("password.json", mode="r") as password_file:
+                data = json.load(password_file)
         except FileNotFoundError:
         #Add exception when file doesn't exist
             messagebox.showinfo(title="Error", message="No Data File Found")
-            
+        else:
+            if(website in data.keys()):
+                email = data[website]["email"]
+                password = data[website]["password"]
+                messagebox.showinfo(title=website, message=f"Email: {email}\nPassword: {password}")
+            else:
+                messagebox.showinfo(title="Error", message="No details for the website exists") 
+
 # ---------------------------- UI SETUP ------------------------------- #
 #window config
 window = tk.Tk()
@@ -91,7 +99,7 @@ website_entry = tk.Entry(width=32)
 website_entry.grid(row=1, column=1, columnspan=2, sticky='W')
 website_entry.focus()
 
-search_button = tk.Button(text="Search", command=lambda: print("search"), width=14)
+search_button = tk.Button(text="Search", command=find_password, width=14)
 search_button.grid(row=1, column=2, sticky='W')
 
 
