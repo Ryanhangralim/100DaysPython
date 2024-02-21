@@ -2,7 +2,7 @@ import tkinter as tk
 import pandas
 import random
 
-#global variable
+# global variable
 generated_word = None
 
 # ---------------------------- IMPORT DATA (WORDS) ------------------------------- #
@@ -16,10 +16,11 @@ else:
 
 # ---------------------------- FLIP CARD ------------------------------- #
 def flip():
-    #get current language
+    # get current language
     canvas.itemconfig(flashcard, image=back_card_img)
     canvas.itemconfig(word, text=generated_word["English"], fill="white")
-    canvas.itemconfig(language, text="English", fill="white") 
+    canvas.itemconfig(language, text="English", fill="white")
+
 
 # ---------------------------- GENERATE NEW WORD ------------------------------- #
 def new_word():
@@ -29,20 +30,23 @@ def new_word():
     japanese = generated_word["Japanese"]
 
     canvas.itemconfig(flashcard, image=front_card_img)
-    canvas.itemconfig(language, text="Japanese", fill="black") 
+    canvas.itemconfig(language, text="Japanese", fill="black")
     canvas.itemconfig(word, text=japanese, fill="black")
     flip_timer = window.after(3000, func=flip)
+
 
 # ---------------------------- REMOVE LEARNED WORD ------------------------------- #
 def learned_word():
     data_dict.remove(generated_word)
     new_word()
 
+
 # ---------------------------- SAVE WORDS ------------------------------- #
 def save():
     save_data = pandas.DataFrame.from_dict(data_dict)
     save_data.to_csv("data/words_to_learn.csv", index=False)
     window.destroy()
+
 
 # ---------------------------- UI SETUP ------------------------------- #
 BACKGROUND_COLOR = "#B1DDC6"
@@ -52,29 +56,40 @@ window.config(bg=BACKGROUND_COLOR, pady=50, padx=50)
 window.title("Japanese Words Flash Cards")
 flip_timer = window.after(3000, func=flip)
 
-#import all images needed for UI
+# import all images needed for UI
 front_card_img = tk.PhotoImage(file="images/card_front.png")
 back_card_img = tk.PhotoImage(file="images/card_back.png")
 right_img = tk.PhotoImage(file="images/right.png")
 wrong_img = tk.PhotoImage(file="images/wrong.png")
 
-#flashcard config
-canvas = tk.Canvas(window, width=800, height=526, bg=BACKGROUND_COLOR, highlightthickness=0)
+# flashcard config
+canvas = tk.Canvas(
+    window, width=800, height=526, bg=BACKGROUND_COLOR, highlightthickness=0
+)
 flashcard = canvas.create_image(400, 263, image=front_card_img)
 canvas.grid(row=0, column=0, columnspan=3)
 
 language = canvas.create_text(400, 150, text="Japanese", font=("Arial", 40, "italic"))
 word = canvas.create_text(400, 263, text="watashi", font=("Arial", 60, "bold"))
 
-#right and wrong button
+# right and wrong button
 wrong_button = tk.Button(image=wrong_img, command=new_word, highlightthickness=0, bd=0)
 wrong_button.grid(row=1, column=0)
 
-right_button = tk.Button(image=right_img, command=learned_word, highlightthickness=0, bd=0)
+right_button = tk.Button(
+    image=right_img, command=learned_word, highlightthickness=0, bd=0
+)
 right_button.grid(row=1, column=2)
 
-#exit button
-exit = tk.Button(text="Exit", command=save, highlightthickness=0, bd=0, background=BACKGROUND_COLOR, font=("Arial", 20, "bold"))
+# exit button
+exit = tk.Button(
+    text="Exit",
+    command=save,
+    highlightthickness=0,
+    bd=0,
+    background=BACKGROUND_COLOR,
+    font=("Arial", 20, "bold"),
+)
 exit.grid(row=1, column=1)
 
 new_word()
