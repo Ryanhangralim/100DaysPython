@@ -8,9 +8,9 @@ generated_word = None
 # ---------------------------- IMPORT DATA (WORDS) ------------------------------- #
 try:
     data = pandas.read_csv("data/words_to_learn.csv")
-    data_dict = data.to_dict(orient="records")
 except FileNotFoundError:
     data = pandas.read_csv("data/japanese_words.csv")
+else:
     data_dict = data.to_dict(orient="records")
 
 
