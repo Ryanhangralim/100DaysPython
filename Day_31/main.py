@@ -2,6 +2,9 @@ import tkinter as tk
 import pandas
 import random
 
+#global variable
+generate_word = None
+
 # ---------------------------- IMPORT DATA (WORDS) ------------------------------- #
 data = pandas.read_csv("data/japanese_words.csv")
 data_dict = data.to_dict(orient="records")
@@ -11,8 +14,23 @@ def generate_word():
     return random.choice(data_dict)
 
 
+# ---------------------------- FLIP CARD ------------------------------- #
+def flip():
+    #get current language
+    current_language = canvas.itemcget(language, "text")
+    if(current_language == "Japanese"):
+        canvas.itemconfig(flashcard, image=back_card_img)
+        canvas.itemconfig(word, text=generated_word["English"], fill="white")
+        canvas.itemconfig(language, text="English", fill="white") 
+    else:
+        canvas.itemconfig(flashcard, image=front_card_img)
+        canvas.itemconfig(word, text=generated_word["Japanese"], fill="black")
+        canvas.itemconfig(language, text="Japanese", fill="black") 
+
+
 # ---------------------------- UI SETUP ------------------------------- #
 def new_word():
+    global generated_word
     generated_word = generate_word()
     japanese = generated_word["Japanese"]
     english = generated_word["English"]
@@ -33,7 +51,7 @@ wrong_img = tk.PhotoImage(file="images/wrong.png")
 
 #flashcard config
 canvas = tk.Canvas(window, width=800, height=526, bg=BACKGROUND_COLOR, highlightthickness=0)
-canvas.create_image(400, 263, image=front_card_img)
+flashcard = canvas.create_image(400, 263, image=front_card_img)
 canvas.grid(row=0, column=0, columnspan=2)
 
 language = canvas.create_text(400, 150, text="Japanese", font=("Arial", 40, "italic"))
@@ -46,4 +64,5 @@ wrong_button.grid(row=1, column=0)
 right_button = tk.Button(image=right_img, command=new_word, highlightthickness=0, bd=0)
 right_button.grid(row=1, column=1)
 
+new_word()
 window.mainloop()
