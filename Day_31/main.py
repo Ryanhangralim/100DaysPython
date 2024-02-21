@@ -1,4 +1,10 @@
 import tkinter as tk
+import pandas
+
+# ---------------------------- IMPORT DATA (WORDS) ------------------------------- #
+data = pandas.read_csv("data/japanese_words.csv")
+data_dict = data.to_dict(orient="records")
+
 
 # ---------------------------- UI SETUP ------------------------------- #
 BACKGROUND_COLOR = "#B1DDC6"
@@ -22,10 +28,10 @@ language = canvas.create_text(400, 150, text="Japanese", font=("Arial", 40, "ita
 word = canvas.create_text(400, 263, text="watashi", font=("Arial", 60, "bold"))
 
 #right and wrong button
-wrong = tk.Button(image=wrong_img, highlightthickness=0, bd=0)
-wrong.grid(row=1, column=0)
+wrong_button = tk.Button(image=wrong_img, highlightthickness=0, bd=0)
+wrong_button.grid(row=1, column=0)
 
-right = tk.Button(image=right_img, highlightthickness=0, bd=0)
-right.grid(row=1, column=1)
+right_button = tk.Button(image=right_img, highlightthickness=0, bd=0)
+right_button.grid(row=1, column=1)
 
 window.mainloop()
