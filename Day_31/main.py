@@ -21,7 +21,7 @@ def flip():
     canvas.itemconfig(word, text=generated_word["English"], fill="white")
     canvas.itemconfig(language, text="English", fill="white") 
 
-# ---------------------------- UI SETUP ------------------------------- #
+# ---------------------------- GENERATE NEW WORD ------------------------------- #
 def new_word():
     global generated_word, flip_timer
     window.after_cancel(flip_timer)
@@ -32,6 +32,11 @@ def new_word():
     canvas.itemconfig(language, text="Japanese", fill="black") 
     canvas.itemconfig(word, text=japanese, fill="black")
     flip_timer = window.after(3000, func=flip)
+
+# ---------------------------- REMOVE LEARNED WORD ------------------------------- #
+def learned_word():
+    data_dict.remove(generated_word)
+    new_word()
 
 # ---------------------------- UI SETUP ------------------------------- #
 BACKGROUND_COLOR = "#B1DDC6"
