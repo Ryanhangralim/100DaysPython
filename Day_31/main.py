@@ -50,7 +50,7 @@ wrong_img = tk.PhotoImage(file="images/wrong.png")
 #flashcard config
 canvas = tk.Canvas(window, width=800, height=526, bg=BACKGROUND_COLOR, highlightthickness=0)
 flashcard = canvas.create_image(400, 263, image=front_card_img)
-canvas.grid(row=0, column=0, columnspan=2)
+canvas.grid(row=0, column=0, columnspan=3)
 
 language = canvas.create_text(400, 150, text="Japanese", font=("Arial", 40, "italic"))
 word = canvas.create_text(400, 263, text="watashi", font=("Arial", 60, "bold"))
@@ -60,7 +60,11 @@ wrong_button = tk.Button(image=wrong_img, command=new_word, highlightthickness=0
 wrong_button.grid(row=1, column=0)
 
 right_button = tk.Button(image=right_img, command=new_word, highlightthickness=0, bd=0)
-right_button.grid(row=1, column=1)
+right_button.grid(row=1, column=2)
+
+#exit button
+exit = tk.Button(text="Exit", highlightthickness=0, bd=0, background=BACKGROUND_COLOR, font=("Arial", 20, "bold"))
+exit.grid(row=1, column=1)
 
 new_word()
 window.mainloop()
