@@ -17,5 +17,11 @@ canvas = tk.Canvas(window, width=800, height=526, bg=BACKGROUND_COLOR, highlight
 canvas.create_image(400, 263, image=front_card_img)
 canvas.grid(row=0, column=0, columnspan=2)
 
+#right and wrong button
+wrong = tk.Button(image=wrong_img, highlightthickness=0, bd=0)
+wrong.grid(row=1, column=0)
+
+right = tk.Button(image=right_img, highlightthickness=0, bd=0)
+right.grid(row=1, column=1)
 
 window.mainloop()
