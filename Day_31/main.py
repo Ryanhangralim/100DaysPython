@@ -38,6 +38,12 @@ def learned_word():
     data_dict.remove(generated_word)
     new_word()
 
+# ---------------------------- SAVE WORDS ------------------------------- #
+def save():
+    save_data = pandas.DataFrame.from_dict(data_dict)
+    save_data.to_csv("data/words_to_learn.csv", index=False)
+    window.destroy()
+
 # ---------------------------- UI SETUP ------------------------------- #
 BACKGROUND_COLOR = "#B1DDC6"
 
@@ -64,11 +70,11 @@ word = canvas.create_text(400, 263, text="watashi", font=("Arial", 60, "bold"))
 wrong_button = tk.Button(image=wrong_img, command=new_word, highlightthickness=0, bd=0)
 wrong_button.grid(row=1, column=0)
 
-right_button = tk.Button(image=right_img, command=new_word, highlightthickness=0, bd=0)
+right_button = tk.Button(image=right_img, command=learned_word, highlightthickness=0, bd=0)
 right_button.grid(row=1, column=2)
 
 #exit button
-exit = tk.Button(text="Exit", highlightthickness=0, bd=0, background=BACKGROUND_COLOR, font=("Arial", 20, "bold"))
+exit = tk.Button(text="Exit", command=save, highlightthickness=0, bd=0, background=BACKGROUND_COLOR, font=("Arial", 20, "bold"))
 exit.grid(row=1, column=1)
 
 new_word()
