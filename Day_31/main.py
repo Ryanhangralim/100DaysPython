@@ -3,45 +3,39 @@ import pandas
 import random
 
 #global variable
-generate_word = None
+generated_word = None
 
 # ---------------------------- IMPORT DATA (WORDS) ------------------------------- #
 data = pandas.read_csv("data/japanese_words.csv")
 data_dict = data.to_dict(orient="records")
 
-# ---------------------------- GENERATE WORDS ------------------------------- #
-def generate_word():
-    return random.choice(data_dict)
-
 
 # ---------------------------- FLIP CARD ------------------------------- #
 def flip():
     #get current language
-    current_language = canvas.itemcget(language, "text")
-    if(current_language == "Japanese"):
-        canvas.itemconfig(flashcard, image=back_card_img)
-        canvas.itemconfig(word, text=generated_word["English"], fill="white")
-        canvas.itemconfig(language, text="English", fill="white") 
-    else:
-        canvas.itemconfig(flashcard, image=front_card_img)
-        canvas.itemconfig(word, text=generated_word["Japanese"], fill="black")
-        canvas.itemconfig(language, text="Japanese", fill="black") 
-
+    canvas.itemconfig(flashcard, image=back_card_img)
+    canvas.itemconfig(word, text=generated_word["English"], fill="white")
+    canvas.itemconfig(language, text="English", fill="white") 
 
 # ---------------------------- UI SETUP ------------------------------- #
 def new_word():
-    global generated_word
-    generated_word = generate_word()
+    global generated_word, flip_timer
+    window.after_cancel(flip_timer)
+    generated_word = random.choice(data_dict)
     japanese = generated_word["Japanese"]
-    english = generated_word["English"]
 
-    canvas.itemconfig(word, text=japanese)
+    canvas.itemconfig(flashcard, image=front_card_img)
+    canvas.itemconfig(language, text="Japanese", fill="black") 
+    canvas.itemconfig(word, text=japanese, fill="black")
+    flip_timer = window.after(3000, func=flip)
+
 # ---------------------------- UI SETUP ------------------------------- #
 BACKGROUND_COLOR = "#B1DDC6"
 
 window = tk.Tk()
 window.config(bg=BACKGROUND_COLOR, pady=50, padx=50)
 window.title("Japanese Words Flash Cards")
+flip_timer = window.after(3000, func=flip)
 
 #import all images needed for UI
 front_card_img = tk.PhotoImage(file="images/card_front.png")
