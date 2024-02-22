@@ -7,8 +7,9 @@ with open("secret.txt", "r") as file:
 email = data[0]
 password = data[1]
 
-connection = smtplib.SMTP("smtp.gmail.com", port=587)
-connection.starttls()
-connection.login(user=email, password=password)
-connection.sendmail(from_addr=email, to_addrs="rh232a@gmail.com", msg="Testing smtp")
-connection.close()
+with smtplib.SMTP("smtp.gmail.com", port=587) as connection:
+    connection.starttls()
+    connection.login(user=email, password=password)
+    connection.sendmail(from_addr=email, 
+                    to_addrs="rh232a@gmail.com", 
+                    msg="Subject:Testing smtp\n\nThis email is for testing smtp purposes")
