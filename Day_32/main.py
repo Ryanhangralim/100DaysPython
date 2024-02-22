@@ -10,17 +10,29 @@
 
 import smtplib
 import datetime as dt
+import random 
+import pandas
 
-#get email and password
-with open("secret.txt", "r") as file:
-    data = file.readlines()
+#import names and dates from birthdays.csv
+data = pandas.read_csv("birthdays.csv")
+birthday_data = data.to_dict(orient="records")
+print(birthday_data)
 
-email = data[0]
-password = data[1]
+#get current date
+now = dt.datetime.now()
+current_month = now.month
+current_day = now.day
 
-with smtplib.SMTP("smtp.gmail.com", port=587) as connection:
-    connection.starttls()
-    connection.login(user=email, password=password)
-    connection.sendmail(from_addr=email, 
-                    to_addrs="rh232a@gmail.com", 
-                    msg="Subject:Testing smtp\n\nThis email is for testing smtp purposes")
+#send email
+# with open("secret.txt", "r") as file:
+#     data = file.readlines()
+
+# email = data[0]
+# password = data[1]
+
+# with smtplib.SMTP("smtp.gmail.com", port=587) as connection:
+#     connection.starttls()
+#     connection.login(user=email, password=password)
+#     connection.sendmail(from_addr=email, 
+#                     to_addrs="rh232a@gmail.com", 
+#                     msg="Subject:Testing smtp\n\nThis email is for testing smtp purposes")
