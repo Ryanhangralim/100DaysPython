@@ -32,28 +32,25 @@ def get_letter(name):
 #import names and dates from birthdays.csv
 data = pandas.read_csv("birthdays.csv")
 birthday_data = data.to_dict(orient="records")
-print(birthday_data)
 
 #get current date
 now = dt.datetime.now()
 current_month = now.month
 current_day = now.day
 
-# #check through list of names
-# for person in birthday_data:
-#     if(person["month"] == current_month and person["day"]):
+#check through list of names
+for person in birthday_data:
+    if(person["month"] == current_month and person["day"] == current_day):
+        # send email
+        with open("secret.txt", "r") as file:
+            data = file.readlines()
 
+        email = data[0]
+        password = data[1]
 
-#send email
-# with open("secret.txt", "r") as file:
-#     data = file.readlines()
-
-# email = data[0]
-# password = data[1]
-
-# with smtplib.SMTP("smtp.gmail.com", port=587) as connection:
-#     connection.starttls()
-#     connection.login(user=email, password=password)
-#     connection.sendmail(from_addr=email, 
-#                     to_addrs="rh232a@gmail.com", 
-#                     msg="Subject:Testing smtp\n\nThis email is for testing smtp purposes")
+        with smtplib.SMTP("smtp.gmail.com", port=587) as connection:
+            connection.starttls()
+            connection.login(user=email, password=password)
+            connection.sendmail(from_addr=email, 
+                            to_addrs=person["email"], 
+                            msg=f"Subject:Happy Birthday!\n\n{get_letter(person['name'])}")
