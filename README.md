@@ -86,4 +86,5 @@ This repository will be filled with codes written for the course titled "100 Day
 ### Day 31
 - Capstone Project - Flash Card Program
 ### Day 32
+- Email SMTP and the datetime module
 - Final Project : Automated Birthday Wisher
