@@ -85,3 +85,5 @@ This repository will be filled with codes written for the course titled "100 Day
 - Final Project : Upgrading the Password Manager
 ### Day 31
 - Capstone Project - Flash Card Program
+### Day 32
+- Final Project : Automated Birthday Wisher
