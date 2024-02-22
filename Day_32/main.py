@@ -1,4 +1,5 @@
 import smtplib
+import datetime as dt
 
 #get email and password
 with open("secret.txt", "r") as file:
