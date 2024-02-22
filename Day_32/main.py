@@ -13,6 +13,22 @@ import datetime as dt
 import random 
 import pandas
 
+birthday = None
+letters = ["letter_templates/letter_1.txt", "letter_templates/letter_2.txt", "letter_templates/letter_3.txt"]
+
+def get_letter(name):
+    letter = random.choice(letters)
+    with open(letter, "r") as file:
+        lines = file.readlines()
+    
+    #replace [name] with person's name
+    letter = ""
+    for line in lines:
+        line = line.replace("[NAME]", name)
+        letter += line
+    
+    return letter
+
 #import names and dates from birthdays.csv
 data = pandas.read_csv("birthdays.csv")
 birthday_data = data.to_dict(orient="records")
@@ -22,6 +38,11 @@ print(birthday_data)
 now = dt.datetime.now()
 current_month = now.month
 current_day = now.day
+
+# #check through list of names
+# for person in birthday_data:
+#     if(person["month"] == current_month and person["day"]):
+
 
 #send email
 # with open("secret.txt", "r") as file:
