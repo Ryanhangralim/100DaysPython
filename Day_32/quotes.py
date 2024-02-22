@@ -1,5 +1,6 @@
 import smtplib
 import datetime as dt
+import random
 
 #get email and password
 with open("secret.txt", "r") as file:
@@ -7,6 +8,11 @@ with open("secret.txt", "r") as file:
 
 email = data[0]
 password = data[1]
+
+#get list of quotes
+with open("quotes.txt", "r") as quote_file:
+    quotes = quote_file.readlines()
+
 
 with smtplib.SMTP("smtp.gmail.com", port=587) as connection:
     connection.starttls()
