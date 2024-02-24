@@ -1,12 +1,13 @@
 import requests
 from datetime import datetime
 import smtplib
+import time
 
 MY_LAT = -8.340539
 MY_LONG = 115.091949
 
 def is_dark(current_hour, sunrise, sunset):
-    return current_hour < sunrise and current_hour > sunset
+    return current_hour <= sunrise and current_hour >= sunset
 
 def is_near(latitude, longitude):
     return (latitude in range(MY_LAT - 5, MY_LAT + 6)) and (longitude in range(MY_LONG -5, MY_LONG + 6))
@@ -34,16 +35,18 @@ sunset = int(data["results"]["sunset"].split("T")[1].split(":")[0])
 time_now = datetime.now()
 current_hour = time_now.hour
 
-if(is_near(iss_latitude, iss_longitude) and is_dark(current_hour, sunrise, sunset)):
-    with open("secret.txt", "r") as file:
-        data = file.readlines()
+while True:
+    time.sleep(60)
+    if(is_near(iss_latitude, iss_longitude) and is_dark(current_hour, sunrise, sunset)):
+        with open("secret.txt", "r") as file:
+            data = file.readlines()
 
-        email = data[0]
-        password = data[1]
+            email = data[0]
+            password = data[1]
 
-        with smtplib.SMTP("smtp.gmail.com", port=587) as connection:
-            connection.starttls()
-            connection.login(user=email, password=password)
-            connection.sendmail(from_addr=email, 
-                            to_addrs=data, 
-                            msg=f"Look Up")
+            with smtplib.SMTP("smtp.gmail.com", port=587) as connection:
+                connection.starttls()
+                connection.login(user=email, password=password)
+                connection.sendmail(from_addr=email, 
+                                to_addrs=email, 
+                                msg=f"Subject:Look Up\n\nThe ISS is above you in the sky.")
