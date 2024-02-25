@@ -26,7 +26,3 @@ class QuizInterface:
         false_choice.grid(row=2, column=1)
 
         self.window.mainloop()
-
-
-
-QuizInterface()
