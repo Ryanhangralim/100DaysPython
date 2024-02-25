@@ -91,3 +91,6 @@ This repository will be filled with codes written for the course titled "100 Day
 ### Day 33
 - Application Programming Interfaces (API)
 - Final Project : International Space Station (ISS) Tracker
+### Day 34
+- The Trivia API
+- Final Project : Quizzler App
