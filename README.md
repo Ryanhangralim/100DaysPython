@@ -97,3 +97,5 @@ This repository will be filled with codes written for the course titled "100 Day
 ### Day 35
 - API Keys, Authentication, Environment Variables and Sending SMS
 - Final Project : Rain Alert Application
+### Day 36
+- Final Project : Stock News Monitoring Project
