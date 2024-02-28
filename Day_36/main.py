@@ -1,16 +1,31 @@
 import requests
 import smtplib
 
+# Get keys and other info
+with open("secret.txt", "r") as file:
+    data = file.readlines()
+
+EMAIL = data[0]
+PASSWORD = data[1]
+AV_APIKEY = data[2]
 STOCK = "TSLA"
 COMPANY_NAME = "Tesla Inc"
 ALPHAVANTAGE_ENDPOINT = "https://www.alphavantage.co/query"
 
 ALPHAVANTAGE_PARAMS = {
-    
+    "function": "TIME_SERIES_DAILY",
+    "symbol" : STOCK,
+    "apikey" : AV_APIKEY,
 }
+
 
 ## STEP 1: Use https://www.alphavantage.co
 # When STOCK price increase/decreases by 5% between yesterday and the day before yesterday then print("Get News").
+
+response = requests.get(url=ALPHAVANTAGE_ENDPOINT, params=ALPHAVANTAGE_PARAMS)
+stock_info = response.json()
+
+print(stock_info)
 
 ## STEP 2: Use https://newsapi.org
 # Instead of printing ("Get News"), actually get the first 3 news pieces for the COMPANY_NAME. 
