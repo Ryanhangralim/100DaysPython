@@ -30,11 +30,11 @@ yesterday = datetime.date.today() - datetime.timedelta(days = 1)
 day_before_yesterday = datetime.date.today() - datetime.timedelta(days = 2)
 
 #get stock closing price for yesterday and the day before
-stock_info_1 = stock_info[str(yesterday)]["4. close"]
-stock_info_2 = stock_info[str(day_before_yesterday)]["4. close"]
+stock_info_1 = float(stock_info[str(yesterday)]["4. close"])
+stock_info_2 = float(stock_info[str(day_before_yesterday)]["4. close"])
 
-print(stock_info_1)
-print(stock_info_2)
+difference = stock_info_1 - stock_info_2
+percentage = round(difference/stock_info_2, 5)
 
 ## STEP 2: Use https://newsapi.org
 # Instead of printing ("Get News"), actually get the first 3 news pieces for the COMPANY_NAME. 
