@@ -1,5 +1,13 @@
+import requests
+import smtplib
+
 STOCK = "TSLA"
 COMPANY_NAME = "Tesla Inc"
+ALPHAVANTAGE_ENDPOINT = "https://www.alphavantage.co/query"
+
+ALPHAVANTAGE_PARAMS = {
+    
+}
 
 ## STEP 1: Use https://www.alphavantage.co
 # When STOCK price increase/decreases by 5% between yesterday and the day before yesterday then print("Get News").
