@@ -1,5 +1,6 @@
 import requests
 import smtplib
+import datetime
 
 # Get keys and other info
 with open("secret.txt", "r") as file:
@@ -18,14 +19,22 @@ ALPHAVANTAGE_PARAMS = {
     "apikey" : AV_APIKEY,
 }
 
-
 ## STEP 1: Use https://www.alphavantage.co
 # When STOCK price increase/decreases by 5% between yesterday and the day before yesterday then print("Get News").
-
 response = requests.get(url=ALPHAVANTAGE_ENDPOINT, params=ALPHAVANTAGE_PARAMS)
-stock_info = response.json()
+response.raise_for_status()
+stock_info = response.json()["Time Series (Daily)"]
 
-print(stock_info)
+#get date
+yesterday = datetime.date.today() - datetime.timedelta(days = 1)
+day_before_yesterday = datetime.date.today() - datetime.timedelta(days = 2)
+
+#get stock closing price for yesterday and the day before
+stock_info_1 = stock_info[str(yesterday)]["4. close"]
+stock_info_2 = stock_info[str(day_before_yesterday)]["4. close"]
+
+print(stock_info_1)
+print(stock_info_2)
 
 ## STEP 2: Use https://newsapi.org
 # Instead of printing ("Get News"), actually get the first 3 news pieces for the COMPANY_NAME. 
