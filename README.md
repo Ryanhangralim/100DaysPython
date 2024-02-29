@@ -99,3 +99,6 @@ This repository will be filled with codes written for the course titled "100 Day
 - Final Project : Rain Alert Application
 ### Day 36
 - Final Project : Stock News Monitoring Project
+### Day 37
+- Advanced Authentication and POST / PUT / DELETE Requests
+- Final Project : Habbit Tracker App
