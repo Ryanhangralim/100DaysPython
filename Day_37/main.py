@@ -47,3 +47,12 @@ pixel_config = {
 
 # response = requests.post(url=PIXEL_ENDPOINT, json=pixel_config, headers=headers)
 # print(response.text)
+
+UPDATE_PIXEL_ENDPOINT = f"{PIXEL_ENDPOINT}/{now.strftime('%Y%m%d')}"
+
+update_pixel_config = {
+    "quantity" : "110"
+}
+
+response = requests.put(url=UPDATE_PIXEL_ENDPOINT, json=update_pixel_config, headers=headers)
+print(response.text)
