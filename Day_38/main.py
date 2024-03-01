@@ -29,3 +29,17 @@ nutritionix_config = {
 
 response = requests.post(url=NUTRI_ENDPOINT, json=nutritionix_config, headers=nutritionix_headers)
 print(response.json())
+
+SHEETY_ENDPOINT = "https://api.sheety.co/cba55caeefe970477a6323961e980c12/myWorkoutsPythonCourse/workouts"
+
+sheety_config = {
+    "workout" : {
+        "date" : 1,
+        "time" : 2,
+        "exercise" : "run",
+        "duration" : 21,
+        "calories" : 32
+    }
+}
+
+response2 = requests.post(url=SHEETY_ENDPOINT, json=sheety_config)
