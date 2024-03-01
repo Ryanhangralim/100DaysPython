@@ -102,3 +102,5 @@ This repository will be filled with codes written for the course titled "100 Day
 ### Day 37
 - Advanced Authentication and POST / PUT / DELETE Requests
 - Final Project : Habbit Tracker App
+### Day 38
+- Final Project : Exercise Tracking with Python and Google Sheets
