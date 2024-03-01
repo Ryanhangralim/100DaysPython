@@ -18,7 +18,7 @@ nutritionix_headers = {
     "x-app-key" : API_KEY,
 }
 
-exercise_text = input("Tell me which exercise you did: ")
+# exercise_text = input("Tell me which exercise you did: ")
 
 nutritionix_config = {
     "query" : "swam for 1 hour and ran 2k",
@@ -29,19 +29,25 @@ nutritionix_config = {
 }
 
 response = requests.post(url=NUTRI_ENDPOINT, json=nutritionix_config, headers=nutritionix_headers)
+response.raise_for_status()
 response = response.json()
 print(response)
 
 SHEETY_ENDPOINT = "https://api.sheety.co/cba55caeefe970477a6323961e980c12/myWorkoutsPythonCourse/workouts"
 
+today = datetime.datetime.now()
+today_date = today.strftime("%d/%m/%Y")
+current_time = today.strftime("%H:%M:%S")
+
 for exercise in response["exercises"]:
     sheety_config = {
         "workout" : {
-            "date" : 1,
-            "time" : 2,
+            "date" : today_date,
+            "time" : current_time,
             "exercise" : exercise["name"].title(),
             "duration" : exercise["duration_min"],
             "calories" : exercise["nf_calories"]
         }
     }
-    requests.post(url=SHEETY_ENDPOINT, json=sheety_config)
+    requests.post(url=SHEETY_ENDPOINT, json=sheety_config).raise_for_status()
+
