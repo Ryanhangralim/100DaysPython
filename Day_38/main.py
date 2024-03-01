@@ -5,7 +5,9 @@ with open("secret.txt", "r") as file:
     data = file.readlines()
 
 APP_ID = data[0].strip()
-API_KEY = data[1]
+API_KEY = data[1].strip()
+AUTH_HEADER = data[2]
+
 GENDER = "male"
 WEIGHT = 75
 HEIGHT = 178
@@ -18,10 +20,10 @@ nutritionix_headers = {
     "x-app-key" : API_KEY,
 }
 
-# exercise_text = input("Tell me which exercise you did: ")
+exercise_text = input("Tell me which exercise you did: ")
 
 nutritionix_config = {
-    "query" : "swam for 1 hour and ran 2k",
+    "query" : exercise_text,
     "gender" : GENDER,
     "weight_kg" : WEIGHT,
     "height_cm" : HEIGHT,
@@ -31,13 +33,16 @@ nutritionix_config = {
 response = requests.post(url=NUTRI_ENDPOINT, json=nutritionix_config, headers=nutritionix_headers)
 response.raise_for_status()
 response = response.json()
-print(response)
 
 SHEETY_ENDPOINT = "https://api.sheety.co/cba55caeefe970477a6323961e980c12/myWorkoutsPythonCourse/workouts"
 
 today = datetime.datetime.now()
 today_date = today.strftime("%d/%m/%Y")
 current_time = today.strftime("%H:%M:%S")
+
+sheety_headers = {
+    "Authorization" : AUTH_HEADER
+}
 
 for exercise in response["exercises"]:
     sheety_config = {
@@ -49,5 +54,5 @@ for exercise in response["exercises"]:
             "calories" : exercise["nf_calories"]
         }
     }
-    requests.post(url=SHEETY_ENDPOINT, json=sheety_config).raise_for_status()
+    requests.post(url=SHEETY_ENDPOINT, json=sheety_config, headers=sheety_headers).raise_for_status()
 
