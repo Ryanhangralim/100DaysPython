@@ -4,7 +4,7 @@ TEQUILA_ENDPOINT = "https://tequila-api.kiwi.com"
 
 class FlightSearch:
     #This class is responsible for talking to the Flight Search API.
-    def get_iataCode(self, city, apikey):
+    def get_iataCode(self, city : str, apikey : str) -> str:
         location_endpoint = f"{TEQUILA_ENDPOINT}/locations/query"
         headers = {
             "apikey" : apikey

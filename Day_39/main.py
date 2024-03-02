@@ -13,6 +13,6 @@ flight_search = FlightSearch()
 
 for city in flight_price_data:
     if(city["iataCode"] == ""):
-        city["iataCode"] = flight_search.get_iataCode("bob")
+        city["iataCode"] = flight_search.get_iataCode(city=city["city"], apikey=KIWI_APIKEY)
 
 sheet_data.update_data(flight_price_data)
