@@ -2,11 +2,12 @@
 from data_manager import DataManager
 from flight_search import FlightSearch
 
-sheet_data = DataManager().get_data()
+sheet_data = DataManager()
+flight_price_data = sheet_data.get_data()
 flight_search = FlightSearch()
 
-for city in sheet_data:
+for city in flight_price_data:
     if(city["iataCode"] == ""):
         city["iataCode"] = flight_search.get_iataCode("bob")
 
-print(sheet_data)
+sheet_data.update_data(flight_price_data)
