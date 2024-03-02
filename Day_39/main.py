@@ -2,6 +2,11 @@
 from data_manager import DataManager
 from flight_search import FlightSearch
 
+with open("secret.txt", "r") as file:
+    data = file.readlines()
+
+KIWI_APIKEY = data[0]
+
 sheet_data = DataManager()
 flight_price_data = sheet_data.get_data()
 flight_search = FlightSearch()
