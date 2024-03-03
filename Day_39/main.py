@@ -23,6 +23,24 @@ for city in flight_price_data:
         city["iataCode"] = flight_search.get_iataCode(city=city["city"], apikey=KIWI_APIKEY)
 sheet_data.update_data(flight_price_data)
 
+#user input
+print("Welcome to Ryan's Flight Club\nWe find the best flight deals and emmail you.")
+user_first_name = input("What is your first name?\n")
+user_last_name = input("What is your last name?\n")
+email1 = "email1"
+email2 = "email2"
+while email1 != email2:
+    email1 = input("What is your email? ")
+    if email1.lower() == "quit" \
+            or email1.lower() == "exit":
+        exit()
+    email2 = input("Please verify your email : ")
+    if email2.lower() == "quit" \
+            or email2.lower() == "exit":
+        exit()
+
+print("OK. You're in the club!")
+
 tomorrow = datetime.now() + timedelta(days=1)
 six_month_from_now = datetime.now() + timedelta(days=(6 * 30))
 
