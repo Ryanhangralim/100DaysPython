@@ -3,6 +3,7 @@ from data_manager import DataManager
 from flight_search import FlightSearch
 from notification_manager import NotificationManager
 from datetime import datetime, timedelta
+import sheety
 
 with open("secret.txt", "r") as file:
     data = file.readlines()
@@ -10,6 +11,7 @@ with open("secret.txt", "r") as file:
 KIWI_APIKEY = data[0].strip()
 EMAIL = data[1].strip()
 PASSWORD = data[2].strip()
+SHEETY_AUTH = data[3].strip()
 
 ORIGIN_CITY_IATA = "DPS"
 
@@ -40,6 +42,8 @@ while email1 != email2:
         exit()
 
 print("OK. You're in the club!")
+
+sheety.add_new_user(first_name=user_first_name, last_name=user_last_name, email=email1, auth_header=SHEETY_AUTH)
 
 tomorrow = datetime.now() + timedelta(days=1)
 six_month_from_now = datetime.now() + timedelta(days=(6 * 30))

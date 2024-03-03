@@ -10,5 +10,5 @@ class NotificationManager:
             connection.sendmail(
                 from_addr=email,
                 to_addrs=email,
-                msg=f"Only £{flight_data.price} to fly from {flight_data.origin_city}-{flight_data.origin_airport} to {flight_data.destination_city}/{flight_data.destination_airport}, from {flight_data.out_date} to {flight_data.return_date}"
+                msg=f"Only {flight_data.price} to fly from {flight_data.origin_city}-{flight_data.origin_airport} to {flight_data.destination_city}/{flight_data.destination_airport}, from {flight_data.out_date} to {flight_data.return_date}"
             )
