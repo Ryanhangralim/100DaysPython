@@ -15,7 +15,7 @@ SHEETY_AUTH = data[3].strip()
 
 ORIGIN_CITY_IATA = "DPS"
 
-sheet_data = DataManager()
+sheet_data = DataManager(SHEETY_AUTH)
 flight_price_data = sheet_data.get_data()
 flight_search = FlightSearch()
 notification = NotificationManager()
