@@ -104,5 +104,6 @@ This repository will be filled with codes written for the course titled "100 Day
 - Final Project : Habbit Tracker App
 ### Day 38
 - Final Project : Exercise Tracking with Python and Google Sheets
-### Day 39
+### Day 39 & 40
 - Capstone Project Part 1 : Cheap Flight Finder
+- Capstone Project Part 2 : Flight FInder
