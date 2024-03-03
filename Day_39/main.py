@@ -47,6 +47,7 @@ sheety.add_new_user(first_name=user_first_name, last_name=user_last_name, email=
 
 tomorrow = datetime.now() + timedelta(days=1)
 six_month_from_now = datetime.now() + timedelta(days=(6 * 30))
+emails = sheet_data.get_user()
 
 for destination in flight_price_data:
     flight = flight_search.search_flight(
@@ -58,4 +59,5 @@ for destination in flight_price_data:
     )
     if flight:
         if flight.price < destination["lowestPrice"]:
-            notification.send_email(flight_data=flight, email=EMAIL, password=PASSWORD)
+            for email in emails:
+                notification.send_email(flight_data=flight, email=EMAIL, password=PASSWORD, desti_email=email)
