@@ -109,3 +109,5 @@ This repository will be filled with codes written for the course titled "100 Day
 - Capstone Project Part 2 : Flight FInder
 ### Day 41
 - Introduction to HTML
+### Day 42
+- HTML Boilerplate
