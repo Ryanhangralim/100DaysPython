@@ -113,3 +113,5 @@ This repository will be filled with codes written for the course titled "100 Day
 - HTML Boilerplate
 ### Day 43
 - Introduction to CSS
+### Day 44
+- CSS colors, font and box models
