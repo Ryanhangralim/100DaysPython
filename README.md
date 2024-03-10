@@ -115,3 +115,5 @@ This repository will be filled with codes written for the course titled "100 Day
 - Introduction to CSS
 ### Day 44
 - CSS colors, font and box models
+### Day 45
+- Scraping the Web with BeautifulSoup
