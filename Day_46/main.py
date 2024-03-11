@@ -1,6 +1,12 @@
 import requests
 from bs4 import BeautifulSoup
 
+with open("secret.txt", "r") as file:
+    data = file.readlines()
+
+CLIENT_ID = data[0]
+CLIENT_SECRET = data[1]
+
 # user_year = input("Which year do you want to travel to? Type the date in this format YYYY-MM-DD: ")
 user_year = "2018-02-04"
 billboard_endpoint = f"https://www.billboard.com/charts/hot-100/{user_year}"
