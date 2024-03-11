@@ -10,8 +10,7 @@ with open("secret.txt", "r") as file:
 CLIENT_ID = data[0].strip()
 CLIENT_SECRET = data[1].strip()
 
-# user_year = input("Which year do you want to travel to? Type the date in this format YYYY-MM-DD: ")
-user_year = "2018-02-04"
+user_year = input("Which year do you want to travel to? Type the date in this format YYYY-MM-DD: ")
 billboard_endpoint = f"https://www.billboard.com/charts/hot-100/{user_year}"
 
 response = requests.get(billboard_endpoint).text
@@ -31,9 +30,11 @@ sp = spotipy.Spotify(
         cache_path="token.txt"
     )
 )
-print(sp.current_user()["id"])
+spotify_userid = sp.current_user()["id"]
 
 # result = sp.search(q="Life will Change", type="track", limit=1)
 # print(result["tracks"]["items"][0]["external_urls"]["spotify"])
 song_links = [sp.search(q=song, type="track", limit=1)["tracks"]["items"][0]["external_urls"]["spotify"] for song in song_list]
-print(song_links)
+
+playlist_id = sp.user_playlist_create(user=spotify_userid, name=f"{user_year} Billboard 100", public=False, collaborative=False, description=f"Top songs from {user_year}")
+sp.playlist_add_items(playlist_id=playlist_id["id"], items=song_links)
