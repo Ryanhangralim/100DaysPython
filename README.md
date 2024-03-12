@@ -119,3 +119,5 @@ This repository will be filled with codes written for the course titled "100 Day
 - Scraping the Web with BeautifulSoup
 ### Day 46
 - Final Project : Musical Time Machine Project
+### Day 47
+- Amazon Price Tracker (Skipped)
