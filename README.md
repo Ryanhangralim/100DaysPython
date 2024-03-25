@@ -121,3 +121,5 @@ This repository will be filled with codes written for the course titled "100 Day
 - Final Project : Musical Time Machine Project
 ### Day 47
 - Amazon Price Tracker (Skipped)
+### Day 48
+- Selenium Webdriver
