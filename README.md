@@ -125,3 +125,5 @@ This repository will be filled with codes written for the course titled "100 Day
 - Selenium Webdriver
 ### Day 49
 - Automating Job Applications on LinkedIn (Skipped)
+### Day 50
+- Auto Tinder Swiping Bot (Skipped)
