@@ -133,3 +133,5 @@ This repository will be filled with codes written for the course titled "100 Day
 - Instagram Follower Bot
 ### Day 53
 - Data Entry Job Automation
+### Day 54
+- Introduction to Web Development with Flask
