@@ -131,3 +131,5 @@ This repository will be filled with codes written for the course titled "100 Day
 - Internet Speed Twitter Complaint Bot (Skipped)
 ### Day 52
 - Instagram Follower Bot
+### Day 52
+- Data Entry Job Automation
