@@ -123,3 +123,5 @@ This repository will be filled with codes written for the course titled "100 Day
 - Amazon Price Tracker (Skipped)
 ### Day 48
 - Selenium Webdriver
+### Day 49
+- Automating Job Applications on LinkedIn (Skipped)
