@@ -49,6 +49,10 @@
 		-webkit-text-size-adjust: none;
 	}
 
+	img{
+		width: 122px;
+	}
+
 /* Box Model */
 
 	*, *:before, *:after {
