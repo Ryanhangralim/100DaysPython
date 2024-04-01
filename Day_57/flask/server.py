@@ -24,7 +24,7 @@ def guess(name):
     return render_template("guess.html", name=name, gender=genderize_response["gender"], age=agify_response["age"])
 
 @app.route("/blog")
-def blog():
+def get_blog():
     blog_url = "https://api.npoint.io/c790b4d5cab58020d391"
     response = requests.get(blog_url).json()
     return render_template("blog.html", posts=response)
