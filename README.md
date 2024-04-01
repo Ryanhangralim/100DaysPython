@@ -140,3 +140,5 @@ This repository will be filled with codes written for the course titled "100 Day
 - Final Project : Higher or Lower URLS
 ### Day 56
 - Static files, HTML/CSS File Rendering and a Personal Site
+### Day 57
+- URL Building and templating with Jinja in your Flask application
