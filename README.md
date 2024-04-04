@@ -142,3 +142,5 @@ This repository will be filled with codes written for the course titled "100 Day
 - Static files, HTML/CSS File Rendering and a Personal Site
 ### Day 57
 - URL Building and templating with Jinja in your Flask application
+### Day 58
+- Web Foundation Bootstrap
