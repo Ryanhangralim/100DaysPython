@@ -144,3 +144,4 @@ This repository will be filled with codes written for the course titled "100 Day
 - URL Building and templating with Jinja in your Flask application
 ### Day 58
 - Web Foundation Bootstrap
+### Day 59
