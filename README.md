@@ -145,3 +145,4 @@ This repository will be filled with codes written for the course titled "100 Day
 ### Day 58
 - Web Foundation Bootstrap
 ### Day 59
+- Blog Update
