@@ -18,5 +18,9 @@ def about():
 def contact():
     return render_template("contact.html")
 
+@app.route("/post/<page>")
+def get_post(page):
+    return render_template("post.html", posts=response, page=int(page))
+
 if __name__ == "__main__":
     app.run(debug=True)
