@@ -146,3 +146,5 @@ This repository will be filled with codes written for the course titled "100 Day
 - Web Foundation Bootstrap
 ### Day 59
 - Blog Update
+### Day 60
+- Post request with Flask
