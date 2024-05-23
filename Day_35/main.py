@@ -12,7 +12,7 @@ parameters = {
     "lat" : -8.670458,
     "lon" : 115.212631,
     "cnt" : 6,
-    "appid" : "05085e0a1c7026f86e153ebaed0e3d59"
+    "appid" : "xxx"
 }
 
 response = requests.get("https://api.openweathermap.org/data/2.5/forecast", params=parameters)
